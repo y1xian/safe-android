@@ -51,6 +51,14 @@ repositories {
 
 //默认配置了AndroidManifest.xml在library模式和application模式下的文件路径
 android {
+
+    compileSdkVersion 27
+    defaultConfig {
+        multiDexEnabled true
+        minSdkVersion 17
+        targetSdkVersion 27
+    }    
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_7
         targetCompatibility JavaVersion.VERSION_1_7
