@@ -45,6 +45,10 @@ repositories {
     jcenter()
 }
 
+ext {
+    yyx = rootProject.ext.dependencies
+}
+
 //默认配置了AndroidManifest.xml在library模式和application模式下的文件路径
 android {
 
