@@ -51,6 +51,13 @@ repositories {
 
 //默认配置了AndroidManifest.xml在library模式和application模式下的文件路径
 android {
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_7
+        targetCompatibility JavaVersion.VERSION_1_7
+    }
+    
+    lintOptions { abortOnError false }
+    
     sourceSets {
         main {
             //默认的作为application运行时Manifest文件路径
