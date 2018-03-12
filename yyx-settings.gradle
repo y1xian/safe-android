@@ -36,10 +36,6 @@ kapt {
     }
 }
 
-ext {
-    yyx = rootProject.ext.dependencies
-}
-
 repositories {
     maven { url rootProject.file("repo-local") }
     maven { url "https://jitpack.io" }
