@@ -39,9 +39,9 @@ kapt {
 repositories {
     maven { url rootProject.file("repo-local") }
     maven { url "https://jitpack.io" }
-    flatDir {
-        dirs '../yyxbase/libs'
-    }
+//   flatDir {
+//        dirs '../yyxbase/libs'
+//    }
     jcenter()
 }
 
@@ -60,8 +60,8 @@ android {
     }    
 
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_7
-        targetCompatibility JavaVersion.VERSION_1_7
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
     
     lintOptions { abortOnError false }
