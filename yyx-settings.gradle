@@ -80,6 +80,124 @@ kapt {
     }
 }
 
+//对组件库的依赖格式： addComponent dependencyName [, realDependency]
+
+// 使用示例见demo/build.gradle
+
+//  dependencyName: 组件库的名称，推荐直接使用使用module的名称
+
+//  realDependency(可选): 组件库对应的实际依赖，可以是module依赖，也可以是maven依赖
+
+//    如果未配置realDependency，将自动依赖 project(":$dependencyName")
+
+//    realDependency可以为如下2种中的一种:
+
+//      module依赖 : project(':demo_component_b') //如果module名称跟dependencyName相同，可省略(推荐)
+
+//      maven依赖  : 'com.billy.demo:demoB:1.1.0' //如果使用了maven私服，请使用此方式
+
+ext.addComponent = { dependencyName, realDependency = null ->
+
+    def curModuleIsBuildingApk = false //当前task是否为给本module打apk包
+
+    def taskNames = project.gradle.startParameter.taskNames
+
+    def regex = "((.*:)?${project.name.toUpperCase()}:)?((ASSEMBLE)|(INSTALL)).*"
+
+    def taskBuildApkPattern = Pattern.compile(regex)
+
+    for (String task : taskNames) {
+
+        if (taskBuildApkPattern.matcher(task.toUpperCase()).matches()) {
+
+            curModuleIsBuildingApk = true
+
+            break
+
+        }
+
+    }
+
+    //不是在为本app module打apk包，不添加对组件的依赖
+
+    if (!curModuleIsBuildingApk)
+
+        return
+
+    def componentProject = rootProject.subprojects.find { it.name == dependencyName }
+
+    def app  //dependencyName指定的module是否为配置为以application方式编译
+
+    if (componentProject && componentProject.ext.has('runAsApp')) {
+
+        //兼容以前的ext.runAsApp=true的配置方式，runAsApp的优先级高
+
+        app = componentProject.ext.runAsApp
+
+    } else if (componentProject && componentProject.ext.has('mainApp') && componentProject.ext.mainApp) {
+
+        //仅ext.mainApp为true时，确定为application方式编译，若为false，则读取local.properties中的配置
+
+        app = true
+
+    } else {
+
+        //local.properties中配置为true代表该module以application方式编译
+
+        app = 'true' == localProperties.getProperty(dependencyName)
+
+    }
+
+    if (!app) {
+
+        def dependencyMode = (project.gradle.gradleVersion as float) >= 4.1F ? 'runtimeOnly' : 'apk'
+
+        if (realDependency) {
+
+            //通过参数传递的依赖方式，如：
+
+            // project(':moduleName')
+
+            // 或
+
+            // 'com.billy.demo:demoA:1.1.0'
+
+            project.dependencies.add(dependencyMode, realDependency)
+
+            println "CC >>>> add $realDependency to ${project.name}'s dependencies"
+
+        } else if (componentProject) {
+
+            //第二个参数未传，默认为按照module来进行依赖
+
+            project.dependencies.add(dependencyMode, project(":$dependencyName"))
+
+            println "CC >>>> add project(\":$dependencyName\") to ${project.name}'s dependencies"
+
+        } else {
+
+            throw new RuntimeException(
+
+                    "CC >>>> add dependency by [ addComponent '$dependencyName' ] occurred an error:" +
+
+                    "\n'$dependencyName' is not a module in current project" +
+
+                    " and the 2nd param is not specified for realDependency" +
+
+                    "\nPlease make sure the module name is '$dependencyName'" +
+
+                    "\nelse" +
+
+                    "\nyou can specify the real dependency via add the 2nd param, for example: " +
+
+                    "addComponent '$dependencyName', 'com.billy.demo:demoB:1.1.0'")
+
+        }
+
+    }
+
+}
+
 repositories {
     maven { url rootProject.file("repo-local") }
     maven { url "https://jitpack.io" }
