@@ -50,7 +50,7 @@ ext {
             rxlifecycle2_components = "2.2.1",
             rxpermission = "0.9.4",
 
-            dagger2 = "2.13",
+            dagger2 = "2.15",
 
             greenDao = "3.2.2",
             litepal = "1.6.1",
