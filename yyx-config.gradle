@@ -28,7 +28,7 @@ ext {
 
             butterknife = "8.8.1",
 
-            fragmentation = "1.2.5",
+            fragmentation = "1.3.3",
 
             qmui = "1.0.6",
 
