@@ -80,6 +80,12 @@ kapt {
     }
 }
 
+kotlin {
+    experimental {
+        coroutines "enable"
+    }
+}
+
 //对组件库的依赖格式： addComponent dependencyName [, realDependency]
 
 // 使用示例见demo/build.gradle
