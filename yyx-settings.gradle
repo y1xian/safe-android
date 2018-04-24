@@ -1,5 +1,7 @@
 import java.util.regex.Pattern
 
+
+
 //先加载local.properties文件
 
 Properties localProperties = new Properties()
@@ -66,25 +68,7 @@ if (runAsApp) {
 
 }
 
-apply plugin: 'kotlin-android'
 
-apply plugin: 'kotlin-android-extensions'
-
-apply plugin: 'kotlin-kapt'
-
-
-kapt {
-    generateStubs = true
-    arguments {
-        arg("moduleName", project.getName())
-    }
-}
-
-kotlin {
-    experimental {
-        coroutines "enable"
-    }
-}
 
 //对组件库的依赖格式： addComponent dependencyName [, realDependency]
 
@@ -205,13 +189,33 @@ ext.addComponent = { dependencyName, realDependency = null ->
 }
 
 repositories {
+
     maven { url rootProject.file("repo-local") }
-    maven { url "https://jitpack.io" }
-//   flatDir {
-//        dirs '../yyxbase/libs'
-//    }
+
     jcenter()
+
 }
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+apply plugin: 'kotlin-kapt'
+
+
+kapt {
+    generateStubs = true
+    arguments {
+        arg("moduleName", project.getName())
+    }
+}
+
+kotlin {
+    experimental {
+        coroutines "enable"
+    }
+}
+
 
 ext {
     yyx = rootProject.ext.dependencies
@@ -235,7 +239,11 @@ android {
     lintOptions { abortOnError false }
     
     sourceSets {
+
         main {
+
+            //默认的作为application运行时Manifest文件路径
+
             def debugManifest = 'src/main/debug/AndroidManifest.xml'
 
             if (runAsApp && project.file(debugManifest).exists()) {
@@ -279,14 +287,17 @@ android {
                 }
 
             }
-            jniLibs.srcDirs = ['libs']
+
         }
+
     }
 }
-dependencies {
-    api "com.billy.android:cc:0.5.0"
-//    compile project(":cc")
-}
+
+def dependencyMode = (project.gradle.gradleVersion as float) >= 4.1F ? 'api' : 'compile'
+
+project.dependencies.add(dependencyMode, "com.billy.android:cc:0.5.0")
+
+
 
 //auto register extension:
 
