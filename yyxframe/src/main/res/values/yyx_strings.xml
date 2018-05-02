@@ -1,0 +1,7 @@
+<resources>
+    <string name="yyx_loading_dialog_message">正在加载中</string>
+    <string name="yyx_loading_no_network_text">无网络连接，请检查你的网络</string>
+    <string name="yyx_loading_error_text">加载失败，请稍后再试</string>
+    <string name="yyx_loading_empty_text">暂无数据</string>
+    <string name="yyx_loading_retry_text">点击重试</string>
+</resources>
