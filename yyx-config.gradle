@@ -19,7 +19,7 @@ ext {
             supportLibraryVersion = "27.+",
             supportV4 = "27.+",
 
-            glideVersion = "4.7.1",
+            glideVersion = "3.7.0",
             glide_transformations = "2.0.2",
 
             loggerVersion = "2.1.1",
