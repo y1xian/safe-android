@@ -4,32 +4,33 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
 
-    <color name="default_actionbar_text">@color/white</color>
-    <color name="default_actionbar">@color/default_color</color>
+    <!--标题-->
+    <color name="actionbar_text">@color/text_black</color>
+    <color name="actionbar_bg">@color/white</color>
 
-    <color name="default_color">#00ace6</color>
-    <color name="default_normal_color">#aeaeae</color>
-    <color name="default_background">@color/white</color>
-    <color name="default_title_color">#202020</color>
-    <color name="default_content_color">#a1a1a1</color>
-    <color name="default_text_color">#bbbbbb</color>
-    <color name="default_layout_bg">#f0f0f0</color>
-    <color name="default_red">#e94140</color>
-
-    <!--item-->
-    <color name="item_bg">@color/white</color>
-    <color name="item_title">@color/default_title_color</color>
-    <color name="item_content">@color/default_content_color</color>
-    <color name="item_text">@color/default_text_color</color>
-
-    <!--通用背景色-->
-    <color name="common_bg">@color/white</color>
-    <!--通用触摸背景色-->
-    <color name="common_touch_bg">#E3E3E3</color>
-
-    <color name="line_gray">#dddddd</color>
-    <color name="white">#ffffff</color>
+    <!--常见颜色-->
+    <color name="white">#FFFFFF</color>
+    <color name="red">#e94140</color>
+    <color name="black">#333333</color>
+    <color name="blue">#00c6ff</color>
+    <color name="green">#00e099</color>
+    <color name="pink">#ff3892</color>
+    <color name="orange">#ff9602</color>
+    <color name="aqua">#02d1ac</color>
+    <color name="yellow">#ffd100</color>
+    <color name="light_yellow">#55ffd100</color>
     <color name="gray">#f2f2f2</color>
 
-    <color name="YYXFrame_loading_dialog_message">@color/default_title_color</color>
+    <!--基本字体颜色-->
+    <color name="text_red">@color/red</color>
+    <color name="text_black">@color/black</color>
+    <color name="text_white">@color/white</color>
+    <color name="text_gray">#a9999999</color>
+    <color name="text_hint_gray">#55999999</color>
+    <color name="text_green">#39951e</color>
+    <color name="gray_d7d7d7">#d7d7d7</color>
+    <color name="divide_line">#dfdfdf</color>
+
+    <color name="line_gray">#dddddd</color>
+
 </resources>

@@ -1,5 +1,6 @@
 package com.yyx.yyxframe.utils;
 
+import android.annotation.SuppressLint;
 import android.os.Build;
 import android.support.annotation.IntDef;
 import android.util.Base64;
@@ -9,6 +10,8 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
 import java.math.BigInteger;
 import java.security.Key;
 import java.security.KeyFactory;
@@ -114,6 +117,7 @@ public class YRSAUtils {
      *
      * @throws NoSuchAlgorithmException 异常
      */
+    @SuppressLint("ObsoleteSdkInt")
     private static KeyFactory getKeyFactory() throws NoSuchAlgorithmException,
             NoSuchProviderException {
         KeyFactory keyFactory;
@@ -130,6 +134,7 @@ public class YRSAUtils {
      *
      * @throws NoSuchAlgorithmException 异常
      */
+    @SuppressLint("ObsoleteSdkInt")
     private static KeyPairGenerator getKeyPairGenerator() throws NoSuchProviderException,
             NoSuchAlgorithmException {
         KeyPairGenerator keyPairGen;
@@ -347,6 +352,7 @@ public class YRSAUtils {
      */
     public static final int RSA_PRIVATE_DECRYPT = 3;
 
+    @Retention(RetentionPolicy.SOURCE)
     @IntDef({RSA_PUBLIC_ENCRYPT, RSA_PUBLIC_DECRYPT, RSA_PRIVATE_ENCRYPT, RSA_PRIVATE_DECRYPT})
     @interface RSAType {}
 

@@ -19,8 +19,6 @@ import com.yyx.yyxframe.utils.imageload.ImageLoader;
 import com.yyx.yyxframe.utils.imageload.YImage;
 import com.yyx.yyxframe.utils.log.YLog;
 import com.yyx.yyxframe.utils.log.YLogConfig;
-import com.yyx.yyxframe.widget.loadingview.YLoadingView;
-import com.yyx.yyxframe.widget.loadingview.YLoadingViewConfig;
 
 /**
  * 初始化
@@ -43,10 +41,6 @@ public class YFrame {
 
     public static YLogConfig initXLog() {
         return YLog.init();
-    }
-
-    public static YLoadingViewConfig initXLoadingView() {
-        return YLoadingView.init();
     }
 
     public static void initXHttp(IHttpEngine httpEngine) {

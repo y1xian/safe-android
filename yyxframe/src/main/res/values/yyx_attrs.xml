@@ -1,11 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <declare-styleable name="YLoadingView">
-        <attr name="loadingView" format="reference" />
-        <attr name="errorView" format="reference" />
-        <attr name="emptyView" format="reference" />
-        <attr name="noNetworkView" format="reference" />
-    </declare-styleable>
 
     <declare-styleable name="YStateButton">
         <!--text color-->
