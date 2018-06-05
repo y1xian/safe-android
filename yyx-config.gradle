@@ -2,12 +2,19 @@ ext {
 
     android = [
 
+
             compileSdkVersion: 27,
-            buildToolsVersion: "9999999999999999.0.0",//26以上就不用了
-            minSdkVersion    : 18,
+
+            buildToolsVersion: "27.0.0",//26以上就不用了
+
+            minSdkVersion    : 19,
+
             targetSdkVersion : 27,
+
             versionCode      : 1,
+
             versionName      : '1.0',
+
     ]
 
 
@@ -16,186 +23,332 @@ ext {
             anko_version = '0.10.4',
 
             // App dependencies version
+
             supportLibraryVersion = "27.+",
+
             supportV4 = "27.+",
 
-            glideVersion = "3.7.0",
+
+
+            glideVersion = "4.7.1",
+
             glide_transformations = "2.0.2",
 
+            glide_okhttp3 = "4.6.1",
+
+
+
             loggerVersion = "2.1.1",
-            fastjsonVersion = "1.2.20", //1.2.41
-            gsonVersion = "2.8.0",
+
+            fastjsonVersion = "1.1.68.android", //1.2.47
+
+            gsonVersion = "2.8.4",
 
             butterknife = "8.8.1",
 
-            fragmentation = "1.3.3",
+            fragmentation = "1.3.4",
 
             qmui = "1.1.2",
 
+
             jptabbar = "1.4.0",
+
 
             agentweb = "3.0.0",
 
-            smartrefresh = "1.0.5-alpha-3",
+
+            smartrefresh = "1.1.0-alpha-6",
+
 
             okgo = "3.0.4",
             okrx2 = "2.0.2",
 
-            rxjava2 = "2.1.7",
-            rxandroid2 = "2.0.1",
+
+            rxjava2 = "2.1.12",
+
+            rxandroid2 = "2.0.2",
+
             rxkotlin2 = "2.2.0",
+
+            rxbinding2 = "2.1.1",
+
             rxlifecycle2 = "2.2.1",
+
             rxlifecycle2_android = "2.2.1",
+
             rxlifecycle2_kotlin = "2.2.1",
+
             rxlifecycle2_components = "2.2.1",
-            rxpermission = "0.9.4",
+
+            rxpermission = "0.9.5@aar",
+
+            autodispose = "0.8.0",
 
             dagger2 = "2.15",
 
+
             greenDao = "3.2.2",
+
             litepal = "1.6.1",
 
+
             arouter_api = "1.3.1",
+
             arouter_compiler = "1.1.4",
+
             arouter_annotation = "1.0.4",
 
-            retrofit2 = "2.3.0",
+
+            retrofit2 = "2.4.0",
+
             retrofit2_coroutines = "1.0.0",
-            retrofit2_adapter_rxjava2 = "2.3.0",
-            retrofit2_converter_gson = "2.3.0",
-            retrofit2_converter_scalars = "2.3.0",
+
+            retrofit2_adapter_rxjava2 = "2.4.0",
+
+            retrofit2_converter_gson = "2.4.0",
+
+            retrofit2_converter_scalars = "2.4.0",
+
             retrofit2_converter_fastjson = "2.1.0",
 
-            eventbus = "3.0.0",
 
-            okhttp3 = "3.3.1",
-            okhttp3_logging_interceptor = "3.9.1",
+            eventbus = "3.1.1",
 
-            BRVAH = "2.9.35",
 
-            multidex = "1.0.1",
+            okhttp3 = "3.10.0",
+
+            okhttp3_logging_interceptor = "3.10.0",
+
+
+            BRVAH = "2.9.40",
+
+
+            multidex = "1.0.3",
+
 
             lifecycle = "1.1.0",
+
             lifecycle_runtime = "1.0.3",
+
             room = "1.0.0",
+
 
             leakcanary = "1.5.4",
 
     ]
+
     dependencies = [
 
+
             appcompatV7                 : "com.android.support:appcompat-v7:$supportLibraryVersion",
+
             design                      : "com.android.support:design:$supportLibraryVersion",
+
             cardview                    : "com.android.support:cardview-v7:$supportLibraryVersion",
+
             palette                     : "com.android.support:palette-v7:$supportLibraryVersion",
+
             recycleview                 : "com.android.support:recyclerview-v7:$supportLibraryVersion",
+
             supportV4                   : "com.android.support:support-v4:$supportV4",
+
             annotations                 : "com.android.support:support-annotations:$supportLibraryVersion",
+
+
 
             eventBus                    : "org.greenrobot:eventbus:$eventbus",
 
+
+
             gson                        : "com.google.code.gson:gson:$gsonVersion",
+
             fastjson                    : "com.alibaba:fastjson:$fastjsonVersion",
+
             logger                      : "com.orhanobut:logger:$loggerVersion",
 
             //glide
+
             glide                       : "com.github.bumptech.glide:glide:$glideVersion",
+
             glide_compiler              : "com.github.bumptech.glide:compiler:$glideVersion",
+
+            glide_okhttp3               : "com.github.bumptech.glide:okhttp3-integration:$glide_okhttp3",
+
             glide_transformations       : "jp.wasabeef:glide-transformations:$glide_transformations",
 
             //butterknife
+
             butterknife                 : "com.jakewharton:butterknife:$butterknife",
+
             butterknife_compiler        : "com.jakewharton:butterknife-compiler:$butterknife",
 
             //fragment框架
+
             fragmentation               : "me.yokeyword:fragmentation:$fragmentation",
+
             fragmentation_swipeback     : "me.yokeyword:fragmentation-swipeback:$fragmentation",
+
 
             jptabbar                    : "com.jpeng:JPTabBar:$jptabbar",
 
+
             qmui                        : "com.qmuiteam:qmui:$qmui",
+
 
             agentweb                    : "com.just.agentweb:agentweb:$agentweb",
 
+
+
             smartrefresh                : "com.scwang.smartrefresh:SmartRefreshLayout:$smartrefresh",
 
+            smartrefresh_header                : "com.scwang.smartrefresh:SmartRefreshHeader:$smartrefresh",
+
+
+
             okhttp3                     : "com.squareup.okhttp3:okhttp:$okhttp3",
+
             okhttp3_logging_interceptor : "com.squareup.okhttp3:logging-interceptor:$okhttp3_logging_interceptor",
 
+
+
             okgo                        : "com.lzy.net:okgo:$okgo",
+
             okrx2                       : "com.lzy.net:okrx2:$okrx2",
 
             //retrofit
+
             retrofit2                   : "com.squareup.retrofit2:retrofit:$retrofit2",
+
             retrofit2_coroutines        : "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-experimental-adapter:$retrofit2_coroutines",
+
             retrofit2_adapter_rxjava2   : "com.squareup.retrofit2:adapter-rxjava2:$retrofit2_adapter_rxjava2",
+
             retrofit2_converter_gson    : "com.squareup.retrofit2:converter-gson:$retrofit2_converter_gson",
+
             retrofit2_converter_scalars : "com.squareup.retrofit2:converter-scalars:$retrofit2_converter_scalars",
+
             retrofit2_converter_fastjson: "org.ligboy.retrofit2:converter-fastjson-android:$retrofit2_converter_fastjson",
 
             //rxjava2
+
             rxjava2                     : "io.reactivex.rxjava2:rxjava:$rxjava2",
+
             rxandroid2                  : "io.reactivex.rxjava2:rxandroid:$rxandroid2",
+
             rxkotlin2                   : "io.reactivex.rxjava2:rxkotlin:$rxkotlin2",
+
+            rxbinding2                  : "com.jakewharton.rxbinding2:rxbinding:$rxbinding2",
+
             rxlifecycle2                : "com.trello.rxlifecycle2:rxlifecycle:$rxlifecycle2",
+
             rxlifecycle2_android        : "com.trello.rxlifecycle2:rxlifecycle-android:$rxlifecycle2_android",
+
             rxlifecycle2_kotlin         : "com.trello.rxlifecycle2:rxlifecycle-kotlin:$rxlifecycle2_kotlin",
+
             rxlifecycle2_components     : "com.trello.rxlifecycle2:rxlifecycle-components:$rxlifecycle2_components",
+
             rxpermission                : "com.tbruyelle.rxpermissions2:rxpermissions:$rxpermission@aar",
 
+            autodispose                 : "com.uber.autodispose:autodispose:$autodispose",
+
+            autodispose_archcomponents  : "com.uber.autodispose:autodispose-android-archcomponents:$autodispose",
+
             //dagger2
+
             dagger2                     : "com.google.dagger:dagger:$dagger2",
+
             dagger2_compiler            : "com.google.dagger:dagger-compiler:$dagger2",
+
             dagger2_android             : "com.google.dagger:dagger-android:$dagger2",
+
             dagger2_android_support     : "com.google.dagger:dagger-android-support:$dagger2",
+
             dagger2_android_processor   : "com.google.dagger:dagger-android-processor:$dagger2",
 
             //ORM
+
             greenDao                    : "org.greenrobot:greendao:$greenDao",
+
             litepal                     : "org.litepal.android:core:$litepal",
 
+
+
             BRVAH                       : "com.github.CymChad:BaseRecyclerViewAdapterHelper:$BRVAH",
+
+
 
             multidex                    : "com.android.support:multidex:$multidex",
 
             //路由通讯
+
             arouter_api                 : "com.alibaba:arouter-api:$arouter_api",
+
             arouter_compiler            : "com.alibaba:arouter-compiler:$arouter_compiler",
+
             arouter_annotation          : "com.alibaba:arouter-annotation:$arouter_annotation",
 
             // Lifecycles, LiveData and ViewModel
+
             lifecycle_reactivestreams   : "android.arch.lifecycle:reactivestreams:$lifecycle",
+
             lifecycle_runtime           : "android.arch.lifecycle:runtime:$lifecycle_runtime",
+
             lifecycle_extensions        : "android.arch.lifecycle:extensions:$lifecycle",
+
             lifecycle_compiler          : "android.arch.lifecycle:compiler:$lifecycle",
+
             // room
+
             room_runtime                : "android.arch.persistence.room:runtime:$room",
+
             room_compiler               : "android.arch.persistence.room:compiler:$room",
+
             room_rxjava2                : "android.arch.persistence.room:rxjava2:$room",
+
             room_testing                : "android.arch.persistence.room:testing:$room",
 
             //Anko
+
             anko                        : "org.jetbrains.anko:anko:$anko_version",
+
             // Anko Commons
+
             anko_commons                : "org.jetbrains.anko:anko-commons:$anko_version",
+
             anko_design                 : "org.jetbrains.anko:anko-design:$anko_version",
+
             // Anko Layouts
+
             anko_sdk25                  : "org.jetbrains.anko:anko-sdk25:$anko_version",
+
             anko_appcompat_v7           : "org.jetbrains.anko:anko-appcompat-v7:$anko_version",
+
             // Coroutine listeners for Anko Layouts
+
             anko_sdk25_coroutines       : "org.jetbrains.anko:anko-sdk25-coroutines:$anko_version",
+
             anko_appcompat_v7_coroutines: "org.jetbrains.anko:anko-appcompat-v7-coroutines:$anko_version",
+
             //Anko SQLite
+
             anko_sqlite                 : "org.jetbrains.anko:anko-sqlite:$anko_version",
+
             //Anko Coroutines
+
             anko_coroutines             : "org.jetbrains.anko:anko-coroutines:$anko_version",
+
             //Anko Recyclerview
+
             anko_recyclerview_v7        : "org.jetbrains.anko:anko-recyclerview-v7:$anko_version",
 
             //leakcanary
+
             leakcanary_debug            : "com.squareup.leakcanary:leakcanary-android:$leakcanary",
+
             leakcanary_release          : "com.squareup.leakcanary:leakcanary-android-no-op:$leakcanary",
+
             leakcanary_test             : "com.squareup.leakcanary:leakcanary-android-no-op:$leakcanary",
+
 
     ]
 
