@@ -13,7 +13,7 @@ public class YImage implements ImageLoader {
     }
 
     public static YImage getInstance() {
-        if (imageLoader==null){
+        if (imageLoader == null) {
             throw new NullPointerException("Call YFrame.initXImageLoader(ImageLoader loader) within your Application onCreate() method." +
                     "Or extends YApplication");
         }
@@ -31,6 +31,11 @@ public class YImage implements ImageLoader {
     @Override
     public void load(ImageView imageView, Object imageUrl, int defaultImage) {
         imageLoader.load(imageView, imageUrl, defaultImage);
+    }
+
+    @Override
+    public void load(ImageView imageView, Object imageUrl, int defaultImage, int errorImage) {
+        imageLoader.load(imageView, imageUrl, defaultImage, errorImage);
     }
 
     @Override
