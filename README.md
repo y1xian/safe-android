@@ -5,7 +5,7 @@ Android工具类
 
 ### Gradle
 ```
-implementation 'com.yyx:yyxframe:1.0.2'
+implementation 'com.yyx:yyxframe:1.0.4'
 ```
 
 ### Maven
@@ -13,7 +13,7 @@ implementation 'com.yyx:yyxframe:1.0.2'
 <dependency>
   <groupId>com.yyx</groupId>
   <artifactId>yyxframe</artifactId>
-  <version>1.0.2</version>
+  <version>1.0.4</version>
   <type>pom</type>
 </dependency>
 ```
