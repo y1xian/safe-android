@@ -1,5 +1,14 @@
 apply plugin: 'com.android.library'
-
+apply plugin: 'com.novoda.bintray-release'
+//添加
+publish {
+    userOrg = 'yangyixian666'//bintray.com用户名
+    groupId = 'com.yyx'//jcenter上的路径
+    artifactId = 'yyxframe'//项目名称
+    publishVersion = '1.0.4'//版本号
+    desc = 'Rapid development framework'//描述，不重要
+    website = 'https://github.com/y1xian/YYXFrame'//网站，最好有，不重要
+}
 android {
     compileSdkVersion 27
 
@@ -19,6 +28,11 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    lintOptions {
+        abortOnError false
+    }
+
 
 
 }
