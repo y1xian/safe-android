@@ -14,8 +14,7 @@ public class YImage implements ImageLoader {
 
     public static YImage getInstance() {
         if (imageLoader == null) {
-            throw new NullPointerException("Call YFrame.initXImageLoader(ImageLoader loader) within your Application onCreate() method." +
-                    "Or extends YApplication");
+            throw new NullPointerException("Call YFrame.initXImageLoader(ImageLoader loader) within your Application onCreate() method Or extends YApplication");
         }
         if (mImage == null) {
             mImage = new YImage();

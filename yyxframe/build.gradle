@@ -1,21 +1,22 @@
 apply plugin: 'com.android.library'
-apply plugin: 'com.novoda.bintray-release'
-//添加
-publish {
-    userOrg = 'yangyixian666'//bintray.com用户名
-    groupId = 'com.yyx'//jcenter上的路径
-    artifactId = 'yyxframe'//项目名称
-    publishVersion = '1.0.4'//版本号
-    desc = 'Rapid development framework'//描述，不重要
-    website = 'https://github.com/y1xian/YYXFrame'//网站，最好有，不重要
-}
+
+//apply plugin: 'com.novoda.bintray-release'
+////添加
+//publish {
+//    userOrg = 'yangyixian666'//bintray.com用户名
+//    groupId = 'com.yyx'//jcenter上的路径
+//    artifactId = 'yyxframe'//项目名称
+//    publishVersion = '1.0.5'//版本号
+//    desc = 'Rapid development framework'//描述，不重要
+//    website = 'https://github.com/y1xian/YYXFrame'//网站，最好有，不重要
+//}
 android {
     compileSdkVersion 27
 
     defaultConfig {
         minSdkVersion 17
         targetSdkVersion 27
-        versionCode 4
+        versionCode 5
         versionName "1.0"
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -45,3 +46,5 @@ dependencies {
     testImplementation 'junit:junit:4.12'
 
 }
+
+apply from: 'bintray.gradle'
