@@ -2,7 +2,7 @@ apply plugin: 'com.github.dcendents.android-maven'
 apply plugin: 'com.jfrog.bintray'
 
 //发布到jcenter配置
-version = "1.0.6"//版本号
+version = "1.0.7"//版本号
 def siteUrl = "https://github.com/y1xian/YYXFrame"      // 项目的主页   这个是说明，可随便填
 def gitUrl = "https://github.com/y1xian/YYXFrame.git"    // Git仓库的url  这个是说明，可随便填
 group = "com.yyx" // groupId

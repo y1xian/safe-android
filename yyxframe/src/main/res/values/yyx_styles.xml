@@ -7,5 +7,6 @@
     <declare-styleable name="CustomTheme">
         <attr name="gifViewStyle" format="reference" />
     </declare-styleable>
-    <style name="Widget_YGifView"></style>
+    <style name="Widget_YGifView"/>
+
 </resources>
