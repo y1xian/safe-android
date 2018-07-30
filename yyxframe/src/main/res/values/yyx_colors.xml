@@ -5,8 +5,8 @@
     <color name="colorAccent">#FF4081</color>
 
     <!--标题-->
-    <color name="actionbar_text">@color/text_black</color>
-    <color name="actionbar_bg">@color/white</color>
+    <!--<color name="actionbar_text">@color/text_black</color>-->
+    <!--<color name="actionbar_bg">@color/white</color>-->
 
     <!--常见颜色-->
     <color name="white">#FFFFFF</color>
