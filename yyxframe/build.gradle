@@ -6,7 +6,7 @@ publish {
     userOrg = 'yangyixian666'//bintray.com用户名
     groupId = 'com.yyx'//jcenter上的路径
     artifactId = 'yyxframe'//项目名称
-    publishVersion = '1.0.11'//版本号
+    publishVersion = '1.0.12'//版本号
     desc = 'Rapid development framework'//描述，不重要
     website = 'https://github.com/y1xian/YYXFrame'//网站，最好有，不重要
 }
@@ -16,7 +16,7 @@ android {
     defaultConfig {
         minSdkVersion 17
         targetSdkVersion 28
-        versionCode 11
+        versionCode 12
         versionName "1.0"
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
