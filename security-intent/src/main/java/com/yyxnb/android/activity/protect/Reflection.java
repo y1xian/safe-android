@@ -5,7 +5,7 @@ import static android.os.Build.VERSION.SDK_INT;
 import android.content.Context;
 import android.os.Build;
 
-import com.yyxnb.android.encrypt.utils.LogUtil;
+import com.yyxnb.android.utils.LogUtil;
 
 import java.lang.reflect.Method;
 

@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.os.IBinder;
 import android.os.Message;
 
-import com.yyxnb.android.encrypt.utils.LogUtil;
+import com.yyxnb.android.utils.LogUtil;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;

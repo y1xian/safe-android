@@ -15,7 +15,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.yyxnb.android.intent.IntentUtils;
 import com.yyxnb.android.intent.SafeIntent;
-import com.yyxnb.android.encrypt.utils.LogUtil;
+import com.yyxnb.android.utils.LogUtil;
 
 /**
  * SafeAppCompatActivity

@@ -1,6 +1,6 @@
 package com.yyxnb.android.activity.protect;
 
-import com.yyxnb.android.encrypt.utils.LogUtil;
+import com.yyxnb.android.utils.LogUtil;
 
 /**
  * 异常处理

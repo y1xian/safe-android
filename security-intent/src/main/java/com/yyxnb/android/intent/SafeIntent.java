@@ -8,7 +8,7 @@ import android.text.TextUtils;
 
 import androidx.annotation.Nullable;
 
-import com.yyxnb.android.encrypt.utils.LogUtil;
+import com.yyxnb.android.utils.LogUtil;
 
 import java.io.Serializable;
 import java.util.ArrayList;
