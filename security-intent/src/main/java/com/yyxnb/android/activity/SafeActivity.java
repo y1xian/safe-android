@@ -7,7 +7,7 @@ import android.os.Bundle;
 
 import com.yyxnb.android.intent.IntentUtils;
 import com.yyxnb.android.intent.SafeIntent;
-import com.yyxnb.android.utils.LogUtil;
+import com.yyxnb.android.encrypt.utils.LogUtil;
 
 /**
  * 捕获相关回调中抛出的异常，防止应用crash

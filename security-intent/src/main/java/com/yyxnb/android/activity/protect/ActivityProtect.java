@@ -6,7 +6,7 @@ import android.os.Build;
 import android.os.Handler;
 import android.os.Looper;
 
-import com.yyxnb.android.utils.LogUtil;
+import com.yyxnb.android.encrypt.utils.LogUtil;
 
 import java.lang.reflect.Field;
 

@@ -1,2 +1,5 @@
 include ':app'
+// intent安全
 include ':security-intent'
+// 加解密
+include ':security-encrypt'

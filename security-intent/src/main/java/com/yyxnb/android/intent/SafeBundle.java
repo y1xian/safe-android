@@ -13,7 +13,7 @@ import android.util.SparseArray;
 
 import androidx.annotation.Nullable;
 
-import com.yyxnb.android.utils.LogUtil;
+import com.yyxnb.android.encrypt.utils.LogUtil;
 
 import java.io.Serializable;
 import java.util.ArrayList;

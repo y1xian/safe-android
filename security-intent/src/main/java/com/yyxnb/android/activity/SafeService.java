@@ -8,7 +8,7 @@ import android.content.ServiceConnection;
 
 import com.yyxnb.android.intent.IntentUtils;
 import com.yyxnb.android.intent.SafeIntent;
-import com.yyxnb.android.utils.LogUtil;
+import com.yyxnb.android.encrypt.utils.LogUtil;
 
 /**
  * SafeService
