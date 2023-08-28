@@ -1,36 +1,39 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
 buildscript {
+    apply from: 'config-build.gradle'
     repositories {
-        google()
-        jcenter()
+        repositories repositoriesExt
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.1.3'
-//        classpath 'com.github.dcendents:android-maven-gradle-plugin:2.0'
-//        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.8.4'
-        classpath 'com.novoda:bintray-release:0.8.1'
-        // NOTE: Do not place your application dependencies here; they belong
-        // in the individual module build.gradle files
-
+        classpath classpathExt.android_gradle
+        // 配置GitHub-maven发布
+        classpath 'com.github.dcendents:android-maven-gradle-plugin:2.1'
     }
 }
 
 allprojects {
-    repositories {
-        google()
-        jcenter()
-    }
-
+    repositories repositoriesExt
+    // 解决 JavaDoc 中文注释生成失败的问题
     tasks.withType(Javadoc) {
-        options.addStringOption('Xdoclint:none', '-quiet') //忽略javadoc错误
-        options{
-            encoding "UTF-8"
-            charSet 'UTF-8'
-            links "http://docs.oracle.com/javase/7/docs/api"
-        }
+        options.addStringOption('Xdoclint:none', '-quiet')
+        options.addStringOption('encoding', 'UTF-8')
+        options { enabled = false }
     }
 
+    // 强制版本
+    configurations.all {
+        resolutionStrategy.eachDependency { DependencyResolveDetails details ->
+            def requested = details.requested
+            if (requested.group == 'androidx.appcompat') {
+                details.useVersion versions.appcompat
+            }
+        }
+        // 干掉测试
+        exclude group: 'junit'
+        exclude group: 'androidx.test.ext'
+        exclude group: 'androidx.test.espresso'
+    }
 }
 
 task clean(type: Delete) {

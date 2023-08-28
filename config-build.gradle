@@ -1,0 +1,101 @@
+// 全局配置
+// 先加载local.properties文件
+Properties localProperties = new Properties()
+try {
+    def localFile = project.rootProject.file('local.properties')
+    if (localFile != null && localFile.exists()) {
+        localProperties.load(localFile.newDataInputStream())
+    }
+} catch (Exception ignored) {
+    println("local.properties not found")
+}
+ext {
+    POM_LOCAL_PATH = null
+    if (!localProperties.isEmpty() && localProperties.containsKey("POM_LOCAL_PATH")) {
+        POM_LOCAL_PATH = localProperties.getProperty("POM_LOCAL_PATH", null)
+    }
+    // 统一仓库
+    repositoriesExt = {
+        maven { url 'https://maven.aliyun.com/repository/central' }
+        maven { url 'https://maven.aliyun.com/repository/jcenter' }
+        maven { url 'https://maven.aliyun.com/repository/google' }
+        maven { url 'https://maven.aliyun.com/repository/gradle-plugin' }
+        maven { url 'https://maven.aliyun.com/repository/public' }
+        maven { url "https://jitpack.io" }
+        mavenCentral()
+        if (POM_LOCAL_PATH != null) {
+            // 本地仓库
+            maven { url uri(POM_LOCAL_PATH) }
+        }
+    }
+
+    androidExt = [
+            compileSdk     : 33,
+            minSdk         : 21,
+            applicationId  : "com.yyxnb.android",
+            targetSdk      : 33,
+            versionCode    : 1,
+            versionName    : '2023.0320.0100',
+            minifyEnabled  : false,
+            shrinkResources: false,
+            zipAlignEnabled: false
+    ]
+
+    compileOptionsExt_1_8 = {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    // 代码编译打包成dex
+    dexOptionsExt = {
+        // 使用增量模式构建
+        incremental true
+        // 最大堆内存
+        javaMaxHeapSize "8g"
+        // 是否支持大工程模式
+        jumboMode = true
+        // 预编译 dex 库。在我们build的时候会快些，但clean时便会慢，默认开启
+        preDexLibraries = true
+        // 线程数
+        threadCount = 8
+    }
+
+    // 发现代码质量问题
+    lintOptionsExt = {
+        // true--关闭lint报告的分析进度
+        quiet true
+        //  true--所有正式版构建执行规则生成崩溃的lint检查，如果有崩溃问题将停止构建
+        checkReleaseBuilds true
+        // true--错误发生后停止gradle构建
+        abortOnError false
+        // true--只报告error
+        ignoreWarnings true
+        // true--忽略有错误的文件的全/绝对路径(默认是true)
+        absolutePaths true
+        // true--检查所有问题点，包含其他默认关闭项
+        checkAllWarnings true
+        // true--所有warning当做error
+        warningsAsErrors true
+    }
+
+    versions = [
+            android_plugin: '7.3.0',
+            startup       : "1.0.0",
+
+            appcompat     : "1.4.0",
+
+            multidex      : '2.0.1',
+    ]
+
+    classpathExt = [
+            android_gradle: [group: 'com.android.tools.build', name: 'gradle', version: versions.android_plugin],
+    ]
+
+
+    dependenciesExt = [
+            appcompat: [group: 'androidx.appcompat', name: 'appcompat', version: versions.appcompat],
+            startup  : [group: 'androidx.startup', name: 'startup-runtime', version: versions.startup],
+
+            multidex : [group: 'androidx.multidex', name: 'multidex', version: versions.multidex],
+    ]
+}

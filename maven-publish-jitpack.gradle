@@ -1,0 +1,161 @@
+// 拉取不下则复制本地引用 apply from: rootProject.file('maven-publish-jitpack.gradle')
+// 发布配置 https://developer.android.google.cn/studio/build/maven-publish-plugin?hl=en#groovy
+apply plugin: 'maven-publish'
+
+// 不使用缓存，使用仓库中最新的包
+configurations.all {
+    // 动态版本 x.x.+
+    resolutionStrategy.cacheDynamicVersionsFor 0, 'seconds'
+    //  变化版本 x.x.x
+    resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
+}
+
+// ----------------------- 在gradle.properties下配置
+
+// POM_GROUP_ID
+// POM_NAME
+// POM_ARTIFACT_ID
+// POM_VERSION
+// POM_PACKAGING
+// POM_LOCAL_PATH
+
+// 完整结构如下 [groupId]:[artifactId]:[version]
+// 公司或者组织域名倒序
+def _groupId = hasProperty('POM_GROUP_ID') ? POM_GROUP_ID : 'com.github.y1xian'
+// 项目名 (github后需带项目名)
+def _groupName = hasProperty("POM_NAME") ? POM_NAME : 'android'
+// 模块名
+def _artifactId = hasProperty("POM_ARTIFACT_ID") ? POM_ARTIFACT_ID : 'core'
+// 版本号
+def _version = hasProperty('POM_VERSION') ? POM_VERSION : '1.0.0-SNAPSHOT'
+// 类型，aar、jar、aab
+def _packaging = hasProperty('POM_PACKAGING') ? POM_PACKAGING : 'aar'
+// 本地仓库地址
+def _localPath = hasProperty('POM_LOCAL_PATH') ? POM_LOCAL_PATH : ''
+
+println("===> groupId: $_groupId ,groupName $_groupName ,artifactId: $_artifactId , version: $_version , packaging: $_packaging ，localPath $_localPath")
+
+// ----------------------- 扩展方法
+
+// android插件
+def hasAndroidPlugin = plugins.hasPlugin("com.android.library")
+// java插件
+def hasJavaPlugin = plugins.hasPlugin("java-library") || plugins.hasPlugin('java')
+
+// 快照版本，则为本地maven
+def isSnapshot = {
+    return _version.endsWith("SNAPSHOT")
+}
+
+def enableLocalMaven = (_localPath != '/' && _localPath != '' && _localPath != null)
+println("===> 版本号 $_version $isSnapshot")
+println("===> 是否开启本地maven $enableLocalMaven $_localPath")
+
+// -----------------------
+
+task sourceJar(type: Jar) {
+    if (hasAndroidPlugin) {
+        task javadoc(type: Javadoc) {
+            source = android.sourceSets.main.java.source
+            classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+            failOnError false
+        }
+
+        task javadocJar(type: Jar, dependsOn: javadoc) {
+            archiveClassifier = 'javadoc'
+            from javadoc.destinationDir
+        }
+
+        task sourcesJar(type: Jar) {
+            archiveClassifier = 'sources'
+            from android.sourceSets.main.java.source
+        }
+    } else if (hasJavaPlugin) {
+        task javadocJar(type: Jar, dependsOn: javadoc) {
+            archiveClassifier = 'javadoc'
+            from javadoc.destinationDir
+        }
+
+        task sourcesJar(type: Jar, dependsOn: classes) {
+            archiveClassifier = 'sources'
+            from sourceSets.main.allSource
+        }
+    }
+}
+
+if (JavaVersion.current().isJava8Compatible()) {
+    allprojects {
+        tasks.withType(Javadoc) {
+            options.addStringOption('Xdoclint:none', '-quiet')
+        }
+    }
+}
+
+// 控制台中文设置UTF-8
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
+}
+
+// ----------------------- 发布maven配置
+
+afterEvaluate {
+    publishing {
+        if (hasAndroidPlugin) {
+            println("当前模块 $project , 发布aar, $enableLocalMaven")
+            if (enableLocalMaven) {
+                // 本地测试配置
+                // 发布配置
+                publications {
+                    // 起个啥名都行，发布路径 Gradle/Tasks/publishing/publish
+                    debug(MavenPublication) {
+                        from components.debug
+                        version = _version
+                        groupId = "$_groupId.$_groupName"
+                    }
+                }
+                // 发布到本地仓
+                repositories {
+                    maven {
+                        url = uri(_localPath)
+                        println("===> android 发布到本地仓 $_localPath")
+                    }
+                }
+            } else {
+                // 发布到 jitpack.io
+                publications {
+                    release(MavenPublication) {
+                        from components.release
+                        groupId = _groupId
+                    }
+                }
+            }
+        } else if (hasJavaPlugin || _packaging == 'jar') {
+            println("当前模块 $project , 发布jar, $enableLocalMaven")
+            if (enableLocalMaven) {
+                // 本地测试配置
+                publications {
+                    debug(MavenPublication) {
+                        from components.java
+                        version = _version
+                        groupId = "$_groupId.$_groupName"
+                    }
+                }
+                // 发布到本地仓
+                repositories {
+                    maven {
+                        url = uri(_localPath)
+                        println("===> java 发布到本地仓 $_localPath")
+                    }
+                }
+            } else {
+                // 发布到 jitpack.io
+                publications {
+                    release(MavenPublication) {
+                        from components.java
+                        groupId = _groupId
+                    }
+                }
+            }
+        }
+    }
+}

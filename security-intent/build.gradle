@@ -1,0 +1,9 @@
+apply from: rootProject.file('config-lib.gradle')
+
+android {
+    namespace 'com.yyxnb.android.intent'
+}
+
+dependencies {
+    implementation dependenciesExt.appcompat
+}

@@ -1,0 +1,78 @@
+// 供lib的build.gradle使用，样板代码
+
+// 是否发布，默认发布
+def isPublish = ext.find('isPublish') == null
+isPublish = isPublish ? true : ext.isPublish
+
+println("是否发布: $isPublish  $POM_VERSION")
+
+//--------------->-------------->--------------
+apply plugin: 'com.android.library'
+
+// 发布
+if (isPublish) {
+//    apply from: 'https://raw.githubusercontent.com/y1xian/y1xian/main/maven-publish-jitpack.gradle'
+    apply from: rootProject.file('maven-publish-jitpack.gradle')
+}
+
+android {
+    //版本配置
+    compileSdk androidExt.compileSdk
+
+    defaultConfig {
+        minSdk androidExt.minSdk
+        targetSdk androidExt.targetSdk
+        versionCode androidExt.versionCode
+        versionName androidExt.versionName
+        multiDexEnabled true
+        vectorDrawables.useSupportLibrary = true
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles 'consumer-rules.pro'
+    }
+
+    buildTypes {
+        debug {
+            //混淆
+            minifyEnabled androidExt.minifyEnabled
+            //是否启用zipAlign压缩
+            zipAlignEnabled androidExt.zipAlignEnabled
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        release {
+            //混淆
+            minifyEnabled androidExt.minifyEnabled
+            //是否启用zipAlign压缩
+            zipAlignEnabled androidExt.zipAlignEnabled
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+
+    repositories {
+        flatDir {
+            dirs 'libs'
+        }
+    }
+
+    compileOptions compileOptionsExt_1_8
+
+    dexOptions dexOptionsExt
+
+    lintOptions lintOptionsExt
+
+    aaptOptions {
+        //停用 PNG 处理
+        cruncherEnabled false
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation dependenciesExt.multidex
+}
