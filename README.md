@@ -8,7 +8,7 @@ jdk:11
 
 - 下沉的通用工具库(security-common)
 - 基础模块(security-base)
-- 应用组件安全(security-intent)：activity安全，crash处理
+- 应用组件安全(security-app)：四大组件安全，可防止应用crash
 - 加解密算法(security-encrypt)
 
 ```groovy
@@ -21,6 +21,6 @@ jdk:11
 dependencies {
     implementation 'com.github.y1xian.safe-android:security-base:latest_version'
     implementation 'com.github.y1xian.safe-android:security-encrypt:latest_version'
-    implementation 'com.github.y1xian.safe-android:security-intent:latest_version'
+    implementation 'com.github.y1xian.safe-android:security-app:latest_version'
 }
 ```
