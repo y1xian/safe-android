@@ -1,9 +1,7 @@
-package com.yyxnb.android.encrypt.utils;
+package com.yyxnb.android.secure.utils;
 
 import android.annotation.SuppressLint;
 import android.os.Build;
-
-import com.yyxnb.android.encrypt.utils.LogUtil;
 
 /**
  * 根密钥导出工具

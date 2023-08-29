@@ -1,10 +1,10 @@
-package com.yyxnb.android.encrypt.aes;
+package com.yyxnb.android.secure.encrypt.aes;
 
 import android.text.TextUtils;
 
-import com.yyxnb.android.encrypt.utils.EncryptUtil;
-import com.yyxnb.android.encrypt.utils.HexUtil;
-import com.yyxnb.android.encrypt.utils.LogUtil;
+import com.yyxnb.android.secure.utils.EncryptUtil;
+import com.yyxnb.android.secure.utils.HexUtil;
+import com.yyxnb.android.secure.utils.LogUtil;
 
 import java.io.UnsupportedEncodingException;
 import java.security.InvalidAlgorithmParameterException;

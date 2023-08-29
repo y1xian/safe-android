@@ -1,9 +1,7 @@
-package com.yyxnb.android.encrypt.utils;
+package com.yyxnb.android.secure.utils;
 
 import android.os.Build;
 import android.util.Base64;
-
-import com.yyxnb.android.encrypt.utils.LogUtil;
 
 import org.bouncycastle.crypto.BlockCipher;
 import org.bouncycastle.crypto.engines.AESEngine;

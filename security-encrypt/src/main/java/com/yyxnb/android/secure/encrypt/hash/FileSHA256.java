@@ -1,10 +1,10 @@
-package com.yyxnb.android.encrypt.hash;
+package com.yyxnb.android.secure.encrypt.hash;
 
 import android.text.TextUtils;
 
-import com.yyxnb.android.encrypt.utils.HexUtil;
-import com.yyxnb.android.encrypt.utils.IOUtil;
-import com.yyxnb.android.encrypt.utils.LogUtil;
+import com.yyxnb.android.secure.utils.HexUtil;
+import com.yyxnb.android.secure.utils.IOUtil;
+import com.yyxnb.android.secure.utils.LogUtil;
 
 import java.io.File;
 import java.io.FileInputStream;

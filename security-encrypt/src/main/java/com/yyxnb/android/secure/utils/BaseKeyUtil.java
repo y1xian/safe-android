@@ -1,9 +1,8 @@
-package com.yyxnb.android.encrypt.utils;
+package com.yyxnb.android.secure.utils;
 
 import android.annotation.SuppressLint;
 
-import com.yyxnb.android.encrypt.hash.PBKDF2;
-import com.yyxnb.android.encrypt.utils.LogUtil;
+import com.yyxnb.android.secure.encrypt.hash.PBKDF2;
 
 /**
  * 导出根密钥基础类

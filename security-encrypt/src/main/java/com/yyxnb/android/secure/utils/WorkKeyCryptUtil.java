@@ -1,7 +1,7 @@
-package com.yyxnb.android.encrypt.utils;
+package com.yyxnb.android.secure.utils;
 
-import com.yyxnb.android.encrypt.aes.AesCbc;
-import com.yyxnb.android.encrypt.aes.AesGcm;
+import com.yyxnb.android.secure.encrypt.aes.AesCbc;
+import com.yyxnb.android.secure.encrypt.aes.AesGcm;
 
 /**
  * 使用根密钥对象对工作密钥使用AES/CBC 或者 AES/GCM 算法进行加解密

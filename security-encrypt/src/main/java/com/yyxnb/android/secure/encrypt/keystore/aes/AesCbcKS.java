@@ -1,4 +1,4 @@
-package com.yyxnb.android.encrypt.keystore.aes;
+package com.yyxnb.android.secure.encrypt.keystore.aes;
 
 import android.os.Build;
 import android.security.keystore.KeyGenParameterSpec;
@@ -7,8 +7,8 @@ import android.text.TextUtils;
 
 import androidx.annotation.RequiresApi;
 
-import com.yyxnb.android.encrypt.utils.HexUtil;
-import com.yyxnb.android.encrypt.utils.LogUtil;
+import com.yyxnb.android.secure.utils.HexUtil;
+import com.yyxnb.android.secure.utils.LogUtil;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;

@@ -1,11 +1,11 @@
-package com.yyxnb.android.encrypt.rsa;
+package com.yyxnb.android.secure.encrypt.rsa;
 
 import android.os.Build;
 import android.text.TextUtils;
 import android.util.Base64;
 
-import com.yyxnb.android.encrypt.utils.EncryptUtil;
-import com.yyxnb.android.encrypt.utils.LogUtil;
+import com.yyxnb.android.secure.utils.EncryptUtil;
+import com.yyxnb.android.secure.utils.LogUtil;
 
 import java.io.UnsupportedEncodingException;
 import java.nio.ByteBuffer;

@@ -1,10 +1,8 @@
-package com.yyxnb.android.encrypt.utils;
+package com.yyxnb.android.secure.utils;
 
 import android.database.Cursor;
 
 import androidx.annotation.RestrictTo;
-
-import com.yyxnb.android.encrypt.utils.LogUtil;
 
 import java.io.Closeable;
 import java.io.IOException;

@@ -1,4 +1,4 @@
-package com.yyxnb.android.encrypt.keystore.rsa;
+package com.yyxnb.android.secure.encrypt.keystore.rsa;
 
 import android.os.Build;
 import android.security.keystore.KeyGenParameterSpec;
@@ -8,7 +8,7 @@ import android.util.Base64;
 
 import androidx.annotation.RequiresApi;
 
-import com.yyxnb.android.encrypt.utils.LogUtil;
+import com.yyxnb.android.secure.utils.LogUtil;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;

@@ -1,77 +1,77 @@
 
--keep class com.yyxnb.android.encrypt.aes.AesCbc{
+-keep class com.yyxnb.android.secure.encrypt.aes.AesCbc{
  public <methods>;
 }
 
--keep class com.yyxnb.android.encrypt.aes.AesGcm{
+-keep class com.yyxnb.android.secure.encrypt.aes.AesGcm{
  public <methods>;
 }
 
--keep class com.yyxnb.android.encrypt.hash.FileSHA256{
+-keep class com.yyxnb.android.secure.encrypt.hash.FileSHA256{
  public <methods>;
 }
 
--keep class com.yyxnb.android.encrypt.hash.HMACSHA256{
+-keep class com.yyxnb.android.secure.encrypt.hash.HMACSHA256{
  public <methods>;
 }
 
--keep class com.yyxnb.android.encrypt.hash.PBKDF2{
+-keep class com.yyxnb.android.secure.encrypt.hash.PBKDF2{
  public <methods>;
 }
 
--keep class com.yyxnb.android.encrypt.hash.SHA{
+-keep class com.yyxnb.android.secure.encrypt.hash.SHA{
  public <methods>;
 }
 
--keep class com.yyxnb.android.encrypt.keystore.aes.AesCbcKS{
+-keep class com.yyxnb.android.secure.encrypt.keystore.aes.AesCbcKS{
  public <methods>;
 }
 
--keep class com.yyxnb.android.encrypt.keystore.aes.AesGcmKS{
+-keep class com.yyxnb.android.secure.encrypt.keystore.aes.AesGcmKS{
  public <methods>;
 }
 
--keep class com.yyxnb.android.encrypt.keystore.rsa.RSAEncryptKS{
+-keep class com.yyxnb.android.secure.encrypt.keystore.rsa.RSAEncryptKS{
  public <methods>;
 }
 
--keep class com.yyxnb.android.encrypt.keystore.rsa.RSASignKS{
+-keep class com.yyxnb.android.secure.encrypt.keystore.rsa.RSASignKS{
  public <methods>;
 }
 
--keep class com.yyxnb.android.encrypt.rsa.RSAEncrypt{
+-keep class com.yyxnb.android.secure.encrypt.rsa.RSAEncrypt{
  public <methods>;
 }
 
 
--keep class com.yyxnb.android.encrypt.rsa.RSASign{
+-keep class com.yyxnb.android.secure.encrypt.rsa.RSASign{
  public <methods>;
 }
 
--keep class com.yyxnb.android.encrypt.utils.HexUtil{
+-keep class com.yyxnb.android.secure.utils.HexUtil{
  public <methods>;
 }
 
--keep class com.yyxnb.android.encrypt.utils.RootKeyUtil{
+-keep class com.yyxnb.android.secure.utils.RootKeyUtil{
  public <methods>;
 }
 
--keep class com.yyxnb.android.encrypt.utils.WorkKeyCryptUtil{
+-keep class com.yyxnb.android.secure.utils.WorkKeyCryptUtil{
  public <methods>;
 }
 
--keep class com.yyxnb.android.encrypt.utils.RootKeyUtil{
+-keep class com.yyxnb.android.secure.utils.RootKeyUtil{
  public <methods>;
 }
 
--keep class com.yyxnb.android.encrypt.utils.EncryptUtil{
+-keep class com.yyxnb.android.secure.utils.EncryptUtil{
  public <methods>;
 }
 
--keep class com.yyxnb.android.encrypt.utils.BaseKeyUtil{
+-keep class com.yyxnb.android.secure.utils.BaseKeyUtil{
  public <methods>;
 }
 
--keep class com.yyxnb.android.encrypt.aes.CipherUtil{
+-keep class com.yyxnb.android.secure.encrypt.aes.CipherUtil{
  public <methods>;
 }
