@@ -1,7 +1,7 @@
 apply from: rootProject.file('config-lib.gradle')
 
 android {
-    namespace 'com.yyxnb.android.intent'
+    namespace 'com.yyxnb.android.secure'
 }
 
 dependencies {

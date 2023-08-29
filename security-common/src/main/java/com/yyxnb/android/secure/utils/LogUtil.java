@@ -1,14 +1,14 @@
-package com.yyxnb.android.encrypt.utils;
+package com.yyxnb.android.secure.utils;
 
 import android.text.TextUtils;
 import android.util.Log;
 
-import com.yyxnb.android.encrypt.BuildConfig;
+import com.yyxnb.android.secure.BuildConfig;
 
 import java.util.regex.Pattern;
 
 /**
- * LogUtil
+ * 过滤日志，防止泄露敏感信息
  *
  * <pre>
  * </pre>
