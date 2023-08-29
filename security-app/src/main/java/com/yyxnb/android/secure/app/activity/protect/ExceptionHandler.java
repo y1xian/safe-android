@@ -1,6 +1,6 @@
-package com.yyxnb.android.activity.protect;
+package com.yyxnb.android.secure.app.activity.protect;
 
-import com.yyxnb.android.utils.LogUtil;
+import com.yyxnb.android.secure.utils.LogUtil;
 
 /**
  * 异常处理

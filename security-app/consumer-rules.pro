@@ -8,15 +8,15 @@
  public <methods>;
 }
 
--keep class com.yyxnb.android.activity.protect.ActivityProtect{
+-keep class com.yyxnb.android.secure.app.activity.protect.ActivityProtect{
  public <methods>;
  }
 
--keep class com.yyxnb.android.activity.protect.ExceptionHandler{
+-keep class com.yyxnb.android.secure.app.activity.protect.ExceptionHandler{
  public <methods>;
  protected <methods>;
 }
 
--keep interface com.yyxnb.android.activity.protect.IActivityProtect{
+-keep interface com.yyxnb.android.secure.app.activity.protect.IActivityProtect{
  public <methods>;
 }

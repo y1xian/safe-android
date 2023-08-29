@@ -1,4 +1,4 @@
-package com.yyxnb.android.activity;
+package com.yyxnb.android.secure.app.activity;
 
 import android.content.Context;
 import android.content.Intent;
@@ -13,9 +13,9 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.yyxnb.android.intent.IntentUtils;
-import com.yyxnb.android.intent.SafeIntent;
-import com.yyxnb.android.utils.LogUtil;
+import com.yyxnb.android.secure.app.intent.IntentUtils;
+import com.yyxnb.android.secure.app.intent.SafeIntent;
+import com.yyxnb.android.secure.utils.LogUtil;
 
 /**
  * SafeAppCompatActivity

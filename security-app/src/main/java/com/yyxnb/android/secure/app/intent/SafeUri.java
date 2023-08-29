@@ -1,4 +1,4 @@
-package com.yyxnb.android.intent;
+package com.yyxnb.android.secure.app.intent;
 
 import android.annotation.SuppressLint;
 import android.net.Uri;

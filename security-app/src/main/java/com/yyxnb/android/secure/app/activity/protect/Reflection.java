@@ -1,11 +1,11 @@
-package com.yyxnb.android.activity.protect;
+package com.yyxnb.android.secure.app.activity.protect;
 
 import static android.os.Build.VERSION.SDK_INT;
 
 import android.content.Context;
 import android.os.Build;
 
-import com.yyxnb.android.utils.LogUtil;
+import com.yyxnb.android.secure.utils.LogUtil;
 
 import java.lang.reflect.Method;
 

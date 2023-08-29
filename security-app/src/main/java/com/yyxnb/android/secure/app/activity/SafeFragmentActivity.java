@@ -1,16 +1,17 @@
-package com.yyxnb.android.activity;
+package com.yyxnb.android.secure.app.activity;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 
-import com.yyxnb.android.intent.IntentUtils;
-import com.yyxnb.android.intent.SafeIntent;
-import com.yyxnb.android.utils.LogUtil;
+import androidx.fragment.app.FragmentActivity;
+
+import com.yyxnb.android.secure.app.intent.IntentUtils;
+import com.yyxnb.android.secure.app.intent.SafeIntent;
+import com.yyxnb.android.secure.utils.LogUtil;
 
 /**
- * 捕获相关回调中抛出的异常，防止应用crash
+ * SafeFragmentActivity
  *
  * <pre>
  * </pre>
@@ -18,9 +19,9 @@ import com.yyxnb.android.utils.LogUtil;
  * @author yyx
  * @date 2023/4/1
  */
-public class SafeActivity extends Activity {
+public class SafeFragmentActivity extends FragmentActivity {
 
-    private static final String TAG = SafeActivity.class.getSimpleName();
+    private static final String TAG = SafeFragmentActivity.class.getSimpleName();
 
     @Override
     public Intent getIntent() {
@@ -35,36 +36,36 @@ public class SafeActivity extends Activity {
     @Override
     public void startActivityForResult(Intent intent, int requestCode) {
         try {
-            super.startActivityForResult(intent, requestCode);
+            super.startActivityForResult(new SafeIntent(intent), requestCode);
         } catch (Exception e) {
-            LogUtil.e(TAG, "startActivity: " + e.getMessage(), e);
+            LogUtil.e(TAG, "startActivity: " + e.getMessage());
         }
     }
 
     @Override
     public void startActivityForResult(Intent intent, int requestCode, Bundle options) {
         try {
-            super.startActivityForResult(intent, requestCode, options);
+            super.startActivityForResult(new SafeIntent(intent), requestCode, options);
         } catch (Exception e) {
-            LogUtil.e(TAG, "startActivity: " + e.getMessage(), e);
+            LogUtil.e(TAG, "startActivity: " + e.getMessage());
         }
     }
 
     @Override
     public void startActivity(Intent intent) {
         try {
-            super.startActivity(intent);
+            super.startActivity(new SafeIntent(intent));
         } catch (Exception e) {
-            LogUtil.e(TAG, "startActivity Exception : " + e.getMessage());
+            LogUtil.e(TAG, "startActivity Exception ");
         }
     }
 
     @Override
     public void startActivity(Intent intent, Bundle options) {
         try {
-            super.startActivity(intent, options);
+            super.startActivity(new SafeIntent(intent), options);
         } catch (Exception e) {
-            LogUtil.e(TAG, "startActivity: " + e.getMessage(), e);
+            LogUtil.e(TAG, "startActivity: " + e.getMessage());
         }
     }
 
@@ -82,7 +83,7 @@ public class SafeActivity extends Activity {
         try {
             super.startActivities(intents, options);
         } catch (Exception e) {
-            LogUtil.e(TAG, "startActivities: " + e.getMessage(), e);
+            LogUtil.e(TAG, "startActivities: " + e.getMessage());
         }
     }
 
@@ -91,7 +92,7 @@ public class SafeActivity extends Activity {
         try {
             return super.startActivityIfNeeded(intent, requestCode);
         } catch (Exception e) {
-            LogUtil.e(TAG, "startActivityIfNeeded: " + e.getMessage(), e);
+            LogUtil.e(TAG, "startActivityIfNeeded: " + e.getMessage());
         }
         return false;
     }
@@ -101,7 +102,7 @@ public class SafeActivity extends Activity {
         try {
             super.finishAffinity();
         } catch (Exception e) {
-            LogUtil.e(TAG, "finishAffinity: " + e.getMessage(), e);
+            LogUtil.e(TAG, "finishAffinity: " + e.getMessage());
         }
     }
 
@@ -113,6 +114,7 @@ public class SafeActivity extends Activity {
             finish();
         }
     }
+
 
     @Override
     protected void onStart() {
@@ -145,7 +147,6 @@ public class SafeActivity extends Activity {
             LogUtil.e(TAG, "onStop : hasIntentBomb");
         }
         super.onStop();
-
     }
 
     @Override
@@ -171,7 +172,7 @@ public class SafeActivity extends Activity {
         try {
             super.onActivityResult(requestCode, resultCode, new SafeIntent(data));
         } catch (Exception e) {
-            LogUtil.e(TAG, "onActivityResult exception : " + e.getMessage(), e);
+            LogUtil.e(TAG, "onActivityResult exception : " + e.getMessage());
         }
     }
 

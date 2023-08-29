@@ -1,4 +1,4 @@
-package com.yyxnb.android.intent;
+package com.yyxnb.android.secure.app.intent;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -8,7 +8,7 @@ import android.text.TextUtils;
 
 import androidx.annotation.Nullable;
 
-import com.yyxnb.android.utils.LogUtil;
+import com.yyxnb.android.secure.utils.LogUtil;
 
 import java.io.Serializable;
 import java.util.ArrayList;

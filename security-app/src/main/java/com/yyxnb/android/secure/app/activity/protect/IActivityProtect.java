@@ -1,4 +1,4 @@
-package com.yyxnb.android.activity.protect;
+package com.yyxnb.android.secure.app.activity.protect;
 
 import android.os.Message;
 

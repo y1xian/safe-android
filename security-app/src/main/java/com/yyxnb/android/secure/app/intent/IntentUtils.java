@@ -1,4 +1,4 @@
-package com.yyxnb.android.intent;
+package com.yyxnb.android.secure.app.intent;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -16,7 +16,7 @@ import android.os.Parcelable;
 import android.os.TransactionTooLargeException;
 
 
-import com.yyxnb.android.utils.LogUtil;
+import com.yyxnb.android.secure.utils.LogUtil;
 
 import java.io.Serializable;
 import java.net.URISyntaxException;

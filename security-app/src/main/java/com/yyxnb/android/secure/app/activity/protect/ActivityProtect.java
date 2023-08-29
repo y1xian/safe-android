@@ -1,4 +1,4 @@
-package com.yyxnb.android.activity.protect;
+package com.yyxnb.android.secure.app.activity.protect;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -6,7 +6,7 @@ import android.os.Build;
 import android.os.Handler;
 import android.os.Looper;
 
-import com.yyxnb.android.utils.LogUtil;
+import com.yyxnb.android.secure.utils.LogUtil;
 
 import java.lang.reflect.Field;
 

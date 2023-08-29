@@ -1,11 +1,11 @@
-package com.yyxnb.android.intent;
+package com.yyxnb.android.secure.app.intent;
 
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 
-import com.yyxnb.android.utils.LogUtil;
+import com.yyxnb.android.secure.utils.LogUtil;
 
 /**
  * SafePendingIntent
