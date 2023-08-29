@@ -1,5 +1,9 @@
 include ':app'
-// intent安全
-include ':security-intent'
+// 基础模块
+include ':security-base'
+// app组件安全
+include ':security-app'
 // 加解密
 include ':security-encrypt'
+// 一些通用工具类
+include ':security-common'
