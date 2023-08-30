@@ -7,5 +7,5 @@ android {
 dependencies {
     implementation dependenciesExt.appcompat
     implementation 'org.bouncycastle:bcpg-jdk15to18:1.71'
-    implementation project(':security-common')
+    api project(':security-common')
 }

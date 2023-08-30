@@ -38,6 +38,10 @@ public class LogUtil {
         return TAG + tag;
     }
 
+    public static void d(String msg) {
+        d(TAG, msg);
+    }
+
     public static void d(String tag, String msg) {
         if (TextUtils.isEmpty(msg)) {
             return;
@@ -47,11 +51,15 @@ public class LogUtil {
         }
     }
 
+    public static void i(String msg) {
+        i(TAG, msg);
+    }
+
     public static void i(String tag, String msg) {
         if (TextUtils.isEmpty(msg)) {
             return;
         }
-        Log.i(getTag(tag), getLogMsg(msg, false));
+        Log.i(getTag(tag), getLogMsg(msg, !BuildConfig.DEBUG));
     }
 
     public static void i(String tag, String msg, boolean isNeedProguard) {
@@ -59,6 +67,14 @@ public class LogUtil {
             return;
         }
         Log.i(getTag(tag), getLogMsg(msg, isNeedProguard));
+    }
+
+    public static void e(String msg) {
+        e(TAG, msg);
+    }
+
+    public static void e(Throwable throwable) {
+        e(TAG, "", throwable);
     }
 
     public static void e(String tag, String msg, boolean isNeedProguard) {
@@ -85,7 +101,7 @@ public class LogUtil {
         if (TextUtils.isEmpty(msg)) {
             return;
         }
-        Log.e(getTag(tag), getLogMsg(msg, false));
+        Log.e(getTag(tag), getLogMsg(msg, !BuildConfig.DEBUG));
     }
 
     /**
