@@ -45,7 +45,8 @@ public class LogUtil {
         StringBuilder retStr = new StringBuilder(512);
         if (!TextUtils.isEmpty(msg)) {
             // 非debug直接匿名
-            if (!SecureConfig.getInstance().isDebug()) {
+            if (!SecureConfig.getInstance().isDebug()
+                    || SecureConfig.getInstance().isLogDesensitization()) {
                 retStr.append(formatLogWithStar(msg));
             } else {
                 retStr.append(msg);
