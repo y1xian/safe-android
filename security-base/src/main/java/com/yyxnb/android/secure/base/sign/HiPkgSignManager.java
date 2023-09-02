@@ -53,9 +53,9 @@ public class HiPkgSignManager {
                 }
             }
         } catch (PackageManager.NameNotFoundException e) {
-            LogUtil.e(TAG, "PackageManager.NameNotFoundException : " + e.getMessage(), true);
+            LogUtil.e(TAG, "PackageManager.NameNotFoundException : " + e.getMessage());
         } catch (Exception e) {
-            LogUtil.e(TAG, "Exception : " + e.getMessage(), true);
+            LogUtil.e(TAG, "Exception : " + e.getMessage());
         }
 
         return new byte[0];
@@ -115,7 +115,7 @@ public class HiPkgSignManager {
                 return mPackageManager.getPackageArchiveInfo(archiveFilePath, PackageManager.GET_SIGNATURES);
             }
         } catch (Exception e) {
-            LogUtil.e(TAG, "Exception : " + e.getMessage(), true);
+            LogUtil.e(TAG, "Exception : " + e.getMessage());
         }
         return null;
     }
